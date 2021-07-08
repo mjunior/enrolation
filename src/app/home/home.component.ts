@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
     "Nessa história ",
     "Nessa feature ",
     "Nessa entrega ",
-    "Nessa semana ",
+    "Essa semana ",
   ]
 
   phrasePart2 = [
@@ -37,22 +37,25 @@ export class HomeComponent implements OnInit {
     " apesar do time feito hora extra. ",
     " apesar de termos feito happines. ",
     " mesmo respeitando o dia do foco. ",
-    " #desculpa. ",
-    ". Vou levar isso pra retro. ",
+    " Vou levar isso pra retro. ",
   ]
   item: string;
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 
   gerar() {
-    this.item = this.phrasePart1[Math.floor(Math.random() * this.phrasePart1.length)] +
-      this.phrasePart2[Math.floor(Math.random() * this.phrasePart2.length)] +
-      this.phrasePart3[Math.floor(Math.random() * this.phrasePart3.length)] +
-      this.phrasePart4[Math.floor(Math.random() * this.phrasePart4.length)];
+    this.item = `"
+    ${this.randon(this.phrasePart1)} 
+    ${this.randon(this.phrasePart2)}
+    ${this.randon(this.phrasePart3)},
+    ${this.randon(this.phrasePart4)}
+    "`;
+  }
 
+  private randon(phrase: string[]): string {
+    return phrase[Math.floor(Math.random() * phrase.length)];
   }
 
 }
