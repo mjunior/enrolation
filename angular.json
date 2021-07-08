@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "enrolation"
+    }
+  },
+  "defaultProject": "enrolation",
+  "cli": {
+    "analytics": "28bf9803-13a8-425a-912c-df188a27af68"
+  }
 }
