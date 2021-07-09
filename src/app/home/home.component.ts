@@ -63,7 +63,7 @@ export class HomeComponent implements OnInit {
 
   play() {
     var audio = new Audio(
-      'http://www.javascriptkit.com/script/script2/click.mp3');
+      '/assets/click.mp3');
     audio.play();
   }
 
