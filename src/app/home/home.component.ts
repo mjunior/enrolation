@@ -12,9 +12,8 @@ export class HomeComponent implements OnInit {
     "Hoje ",
     "Nesse deploy ",
     "Nessa história ",
-    "Nessa feature ",
-    "Nessa entrega ",
-    "Essa semana ",
+    "Essa feature ",
+    "Essa semana "
   ]
 
   phrasePart2 = [
@@ -22,6 +21,7 @@ export class HomeComponent implements OnInit {
     "não conseguimos subir pra produção ",
     "não conseguimos completar a pr ",
     "não batemos a meta",
+    "vamos apresentar local"
   ]
   phrasePart3 = [
     "devido a lentidão na aprovação de pr",
@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit {
     "por falta de devs",
     "porque minha internet caiu",
     "porque fui trocar de note",
+    "devido a tantas reuniões"
   ]
   phrasePart4 = [
     "mesmo tendo fechado as tasks.",
@@ -38,7 +39,8 @@ export class HomeComponent implements OnInit {
     "apesar de termos feito happines.",
     "mesmo respeitando o dia do foco.",
     "vou levar isso pra retro.",
-    "mas o time deu o sangue."
+    "mas o time deu o sangue.",
+    "precisamos acionar infra"
   ]
   paragraph: string;
   constructor() { }
@@ -50,10 +52,10 @@ export class HomeComponent implements OnInit {
 
   generate() {
     this.paragraph = `"
-    1:${this.randon(this.phrasePart1)} 
-    2:${this.randon(this.phrasePart2)}
-    3:${this.randon(this.phrasePart3)},
-    4:${this.randon(this.phrasePart4)}
+    ${this.randon(this.phrasePart1)} 
+    ${this.randon(this.phrasePart2)}
+    ${this.randon(this.phrasePart3)},
+    ${this.randon(this.phrasePart4)}
     "`;
   }
 
