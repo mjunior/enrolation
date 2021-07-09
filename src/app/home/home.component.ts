@@ -52,12 +52,27 @@ export class HomeComponent implements OnInit {
 
 
   generate() {
-    this.paragraph = `"
-    ${this.randon(this.phrasePart1)} 
+
+    for (let i = 0; i < Math.floor(Math.random() * 40) + 20; i++) {
+      setTimeout(() => {
+        this.getParagraph();
+      }, i * 50);
+    }
+
+  }
+
+  play() {
+    var audio = new Audio(
+      'http://www.javascriptkit.com/script/script2/click.mp3');
+    audio.play();
+  }
+
+  getParagraph() {
+    this.play();
+    this.paragraph = `"${this.randon(this.phrasePart1)} 
     ${this.randon(this.phrasePart2)}
     ${this.randon(this.phrasePart3)},
-    ${this.randon(this.phrasePart4)}
-    "`;
+    ${this.randon(this.phrasePart4)}"`;
   }
 
   private randon(phrase: string[]): string {
