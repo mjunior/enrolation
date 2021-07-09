@@ -21,7 +21,8 @@ export class HomeComponent implements OnInit {
     "não conseguimos subir pra produção ",
     "não conseguimos completar a pr ",
     "não batemos a meta",
-    "vamos apresentar local"
+    "vamos apresentar local",
+    "não consgui completar a pr ",
   ]
   phrasePart3 = [
     "devido a lentidão na aprovação de pr",
