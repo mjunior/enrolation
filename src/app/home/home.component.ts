@@ -20,37 +20,40 @@ export class HomeComponent implements OnInit {
   phrasePart2 = [
     "tivemos muitas dificuldades na nossa pipeline ",
     "não conseguimos subir pra produção ",
-    "não consgui completar a pr ",
-    "não ",
+    "não conseguimos completar a pr ",
+    "não batemos a meta",
   ]
   phrasePart3 = [
-    "devido a lentidão de aprovação de pr ",
-    "por conta de falta de acesso à AWS ",
-    "pq a fis caiu ",
-    "por falta de devs ",
-    "porque minha internet caiu ",
-    "por que fui trocar de note ",
+    "devido a lentidão na aprovação de pr",
+    "por conta de falta de acesso à AWS",
+    "porque a fis caiu",
+    "por falta de devs",
+    "porque minha internet caiu",
+    "porque fui trocar de note",
   ]
   phrasePart4 = [
-    " mesmo tendo fechado as tasks. ",
-    " mesmo cancelando os refinamentos. ",
-    " apesar do time feito hora extra. ",
-    " apesar de termos feito happines. ",
-    " mesmo respeitando o dia do foco. ",
-    " Vou levar isso pra retro. ",
+    "mesmo tendo fechado as tasks.",
+    "mesmo cancelando os refinamentos.",
+    "apesar do time ter feito hora extra.",
+    "apesar de termos feito happines.",
+    "mesmo respeitando o dia do foco.",
+    "vou levar isso pra retro.",
+    "mas o time deu o sangue."
   ]
-  item: string;
+  paragraph: string;
   constructor() { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.generate();
+  }
 
 
-  gerar() {
-    this.item = `"
-    ${this.randon(this.phrasePart1)} 
-    ${this.randon(this.phrasePart2)}
-    ${this.randon(this.phrasePart3)},
-    ${this.randon(this.phrasePart4)}
+  generate() {
+    this.paragraph = `"
+    1:${this.randon(this.phrasePart1)} 
+    2:${this.randon(this.phrasePart2)}
+    3:${this.randon(this.phrasePart3)},
+    4:${this.randon(this.phrasePart4)}
     "`;
   }
 
