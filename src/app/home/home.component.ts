@@ -12,46 +12,56 @@ export class HomeComponent implements OnInit {
     "Hoje ",
     "Nesse deploy ",
     "Nessa história ",
-    "Nessa feature ",
-    "Nessa entrega ",
-    "Nessa semana ",
+    "Essa feature ",
+    "Essa semana "
   ]
 
   phrasePart2 = [
     "tivemos muitas dificuldades na nossa pipeline ",
     "não conseguimos subir pra produção ",
+    "não conseguimos completar a pr ",
+    "não batemos a meta",
+    "vamos apresentar local",
     "não consgui completar a pr ",
   ]
   phrasePart3 = [
-    "devido a lentidão de aprovação de pr ",
-    "por conta de falta de acesso à AWS ",
-    "pq a fis caiu ",
-    "por falta de devs ",
-    "porque minha internet caiu ",
-    "por que fui trocar de note ",
+    "devido a lentidão na aprovação de pr",
+    "por conta de falta de acesso à AWS",
+    "porque a fis caiu",
+    "por falta de devs",
+    "porque minha internet caiu",
+    "porque fui trocar de note",
+    "devido a tantas reuniões"
   ]
   phrasePart4 = [
-    " mesmo tendo fechado as tasks. ",
-    " mesmo cancelando os refinamentos. ",
-    " apesar do time feito hora extra. ",
-    " apesar de termos feito happines. ",
-    " mesmo respeitando o dia do foco. ",
-    " #desculpa. ",
-    ". Vou levar isso pra retro. ",
+    "mesmo tendo fechado as tasks.",
+    "mesmo cancelando os refinamentos.",
+    "apesar do time ter feito hora extra.",
+    "apesar de termos feito happines.",
+    "mesmo respeitando o dia do foco.",
+    "vou levar isso pra retro.",
+    "mas o time deu o sangue.",
+    "precisamos acionar infra"
   ]
-  item: string;
+  paragraph: string;
   constructor() { }
 
   ngOnInit(): void {
+    this.generate();
   }
 
 
-  gerar() {
-    this.item = this.phrasePart1[Math.floor(Math.random() * this.phrasePart1.length)] +
-      this.phrasePart2[Math.floor(Math.random() * this.phrasePart2.length)] +
-      this.phrasePart3[Math.floor(Math.random() * this.phrasePart3.length)] +
-      this.phrasePart4[Math.floor(Math.random() * this.phrasePart4.length)];
+  generate() {
+    this.paragraph = `"
+    ${this.randon(this.phrasePart1)} 
+    ${this.randon(this.phrasePart2)}
+    ${this.randon(this.phrasePart3)},
+    ${this.randon(this.phrasePart4)}
+    "`;
+  }
 
+  private randon(phrase: string[]): string {
+    return phrase[Math.floor(Math.random() * phrase.length)];
   }
 
 }
